@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    
+    <div class="gallery-wrap">
+        <img src="previous.png" id="backBtn">
+    <div class="gallery">
+        <div>
+         <span> <img src="pink1.JPG"></span>
+         <span><img src="pink2.JPG"></span>
+         <span ><img src="pink3.JPG"></span>
+         </div>
+         
+         <div>
+            
+            <span> <img style="height:230px;"src="blue1.JPG"></span>
+            <span><img src="blue2.JPG"></span>
+            <span ><img src="blue4.JPG"></span>
+        </div> 
+    </div>
+    <img src="next.png" id="nextBtn">
+    </div>
+    <button  onclick="move()" id="ny" style="margin-left:600px;padding: 5px 20px;background-color: black;color: aquamarine;
+    border-radius: 5px;">Tap</button>
+    <script>
+        let scrollcontainer=document.querySelector(".gallery");
+        let backBtn=document.getElementById("backBtn");
+        let nextBtn=document.getElementById("nextBtn");
+        scrollcontainer.addEventListener("wheel",(evt)=>
+        {
+            evt.preventDefault();
+            scrollcontainer.scrollLeft+=evt.deltaY;
+
+        });
+        nextBtn.addEventListener("click",()=>
+        {
+            scrollcontainer.style.scrollBehavior="smooth";
+            scrollcontainer.scrollLeft+=900;
+        })
+        backBtn.addEventListener("click",()=>
+        {
+            scrollcontainer.scrollLeft-=900;
+        })
+    
+        function move(){
+            var r1='index.html';
+        window.location.href=r1;
+        }
+    
+    </script>
+</body>
+</html>

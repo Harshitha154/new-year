@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: verdana;
+}
+body{
+   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    overflow: hidden;
+    background: url(bg2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+}
+.box{
+    backdrop-filter: blur(8px);
+    background:transparent;
+    border-radius: 20px;
+    position: absolute;
+    cursor:pointer;
+    width:390px;
+    height:200px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+   border:2px solid rgba(255,255,255,.5);
+    box-shadow:10px 0px 10px 20px rgba(116, 2, 133, 0.37);
+
+}
+.box::before{
+    content:'Hello Syco!!';
+    position:absolute;
+    top:-2em;
+    width:100%;
+    color:white;
+    text-align: center;
+    transition: 1s;
+    font-size:2em;
+}
+.box span{
+    display:inline-block;
+    color:white;
+    font-size: 7em;
+    font-weight: bold;
+    transition: 2s;
+    filter:blur(1px);
+    padding:7px;
+  text-shadow: -3px 5px 9px;
+    
+}
+
+.box span:last-child{
+    color:white;
+}
+.box:hover span:last-child{
+    transform:rotate(45deg)translateY(-200px);
+    opacity:0;
+    filter:blur(30px);
+}
+.box span:nth-child(3):after
+{
+    content:'4';
+    position: absolute;
+    color:white;
+    transform: rotate(-45deg)translateY(200px);
+    opacity:1;
+    filter:blur(30px);
+
+}
+.box:hover span:nth-child(3):after
+{
+    transform:rotate(0deg)translateY(0px);
+    opacity:1;
+    filter:blur(0px);
+}
+button{
+    position: absolute;
+    bottom:8em;
+    width:70px;
+    background:black;
+    border-radius: 4px;
+    color: white;
+    box-shadow: 4px 4px 16px grey;
+
+}
